@@ -3,6 +3,7 @@ import logo from '../assets/logoWithoutBGSm.png'
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import ServicesSection from '../pages/ServicesSection';
+import Technologies from '../pages/Technologies';
 function Header() {
   return (
     <header className="w-full bg-[#00071e] text-white shadow-md fixed top-0 left-0 z-50">
@@ -16,8 +17,8 @@ function Header() {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 text-lg">
         <a href="#home" className="hover:text-[#b6fefe] transition">About us</a>
-        <a href="#services" className="hover:text-[#b6fefe] transition">Services</a>
-        <a href="#pricing" className="hover:text-[#b6fefe] transition">Technologies</a>
+        <a href={ServicesSection} className="hover:text-[#b6fefe] transition">Services</a>
+        <a href={Technologies} className="hover:text-[#b6fefe] transition">Technologies</a>
         <a href="#about" className="hover:text-[#b6fefe] transition">Work</a>
         <a href="#contact" className="hover:text-[#b6fefe] transition">Contacts</a>
         </nav>

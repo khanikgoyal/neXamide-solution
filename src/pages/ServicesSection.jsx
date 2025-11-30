@@ -47,7 +47,7 @@ export default function ServicesSection() {
           className="text-4xl md:text-5xl font-extrabold mb-4"
         >
           Our{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-500 text-transparent bg-clip-text">
+          <span className="bg-linear-to-r from-blue-400 to-cyan-500 text-transparent bg-clip-text">
             Services
           </span>
         </motion.h2>

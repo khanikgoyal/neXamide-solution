@@ -17,7 +17,7 @@ export default function HeroSection() {
         {/* HEADLINE */}
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
           Transforming Ideas Into  
-          <span className="block bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <span className="block bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             Intelligent Digital Solutions
           </span>
         </h1>
@@ -33,7 +33,7 @@ export default function HeroSection() {
           <motion.a 
             whileHover={{ scale: 1.05 }} 
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-lg shadow-lg cursor-pointer"
+            className="px-6 py-3 rounded-full bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg shadow-lg cursor-pointer"
           >
             View My Work
           </motion.a>
