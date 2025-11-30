@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom'
 import HeroSection from './pages/HeroSection'
 import ServicesSection from './pages/ServicesSection'
 import Technologies from './pages/Technologies'
+import AboutUs from './pages/AboutUs'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,6 +18,7 @@ function App() {
        <HeroSection />
        <ServicesSection/> 
        <Technologies/>
+       <AboutUs/>
     </main>
     <Footer/>
     </>

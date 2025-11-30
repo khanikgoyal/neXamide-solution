@@ -4,6 +4,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import ServicesSection from '../pages/ServicesSection';
 import Technologies from '../pages/Technologies';
+import AboutUs from '../pages/AboutUs';
 function Header() {
   return (
     <header className="w-full bg-[#00071e] text-white shadow-md fixed top-0 left-0 z-50">
@@ -19,7 +20,7 @@ function Header() {
         <a href="#home" className="hover:text-[#b6fefe] transition">About us</a>
         <a href={ServicesSection} className="hover:text-[#b6fefe] transition">Services</a>
         <a href={Technologies} className="hover:text-[#b6fefe] transition">Technologies</a>
-        <a href="#about" className="hover:text-[#b6fefe] transition">Work</a>
+        <a href={AboutUs} className="hover:text-[#b6fefe] transition">Work</a>
         <a href="#contact" className="hover:text-[#b6fefe] transition">Contacts</a>
         </nav>
 
@@ -44,8 +45,8 @@ function Header() {
         >
         <a href="#home" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">About us</a>
         <a href={ServicesSection} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Services</a>
-        <a href="#pricing" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Technologies</a>
-        <a href="#about" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Work</a>
+        <a href={Technologies} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Technologies</a>
+        <a href={AboutUs} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Work</a>
         <a href="#contact" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Contacts</a>
         </motion.div>
         )}
