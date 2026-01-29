@@ -1,57 +1,57 @@
-import React from 'react'
-import logo from '../assets/logoWithoutBGSm.png'
+import Logo from "./Logo";
+import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
-import ServicesSection from '../pages/ServicesSection';
-import Technologies from '../pages/Technologies';
-import AboutUs from '../pages/AboutUs';
+import { Link } from 'react-router-dom';
+
 function Header() {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="w-full bg-[#00071e] text-white shadow-md fixed top-0 left-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+
         {/* Logo */}
         <div className="flex items-center gap-3">
-        <img src={logo} alt="N Examind Logo" className="h-12 w-auto object-contain" />
+          <Logo />
         </div>
-
-
+    
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 text-lg">
-        <a href="#home" className="hover:text-[#b6fefe] transition">About us</a>
-        <a href={ServicesSection} className="hover:text-[#b6fefe] transition">Services</a>
-        <a href={Technologies} className="hover:text-[#b6fefe] transition">Technologies</a>
-        <a href={AboutUs} className="hover:text-[#b6fefe] transition">Work</a>
-        <a href="#contact" className="hover:text-[#b6fefe] transition">Contacts</a>
+          <Link to="/aboutus" className="hover:text-[#b6fefe] transition">About us</Link>
+          <Link to="/services" className="hover:text-[#b6fefe] transition">Services</Link>
+          <Link to="/technologies" className="hover:text-[#b6fefe] transition">Technologies</Link>
+          <Link to="/works" className="hover:text-[#b6fefe] transition">Works</Link>
+          <Link to="/contact-us" className="hover:text-[#b6fefe] transition">Contact Us</Link>
         </nav>
 
-
-        {/* Mobile Menu Icon */}
+        {/* Mobile Menu Button */}
         <button
-        onClick={() => setOpen(!open)}
-        className="md:hidden text-3xl focus:outline-none"
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-3xl focus:outline-none"
         >
-        {open ? <FiX /> : <FiMenu />}
+          {open ? <FiX /> : <FiMenu />}
         </button>
-        </div>
+      </div>
 
-
-        {/* Mobile Menu */}
-        {open && (
+      {/* Mobile Menu */}
+      {open && (
         <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        className="md:hidden bg-[#0a0f1a] pb-4 px-4 text-lg flex flex-col gap-4 shadow-lg"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="md:hidden bg-[#0a0f1a] pb-4 px-4 text-lg flex flex-col gap-4 shadow-lg"
         >
-        <a href="#home" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">About us</a>
-        <a href={ServicesSection} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Services</a>
-        <a href={Technologies} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Technologies</a>
-        <a href={AboutUs} onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Work</a>
-        <a href="#contact" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Contacts</a>
+          <Link to="/aboutus" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">About us</Link>
+          <Link to="/services" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Services</Link>
+          <Link to="/technologies" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Technologies</Link>
+          <a href="#work" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Work</a>
+          <a href="#contact" onClick={() => setOpen(false)} className="hover:text-[#4ade80]">Contacts</a>
         </motion.div>
-        )}
-        </header>
-  )
+      )}
+    </header>
+  );
 }
 
-export default Header
+export default Header;

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Logo from "../components/Logo";
 
 export default function AboutUs() {
   return (
@@ -19,10 +20,10 @@ export default function AboutUs() {
           className="space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            About <span className="text-blue-400">NExamind</span>
+            About <span className="text-blue-400">neXamind</span>
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            NExamind is a modern AI‑powered development & automation agency. We
+            neXamind is a modern AI‑powered development & automation agency. We
             specialize in building scalable apps, websites, AI solutions, and
             end‑to‑end business automation systems. Our goal is to help startups
             and businesses grow faster using intelligent technology.
@@ -43,11 +44,7 @@ export default function AboutUs() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <img
-            src="/src/assets/about/about-img.png"
-            alt="About NExamind"
-            className="w-full max-w-md rounded-xl shadow-lg shadow-blue-500/10 border border-blue-900/20"
-          />
+          <Logo logoClass="h-40 w-50"/>
         </motion.div>
       </div>
     </section>

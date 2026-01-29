@@ -1,12 +1,18 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import logo from '../assets/logoWithoutBGSm.png'
+import Logo from "./Logo";
+import { Link } from "react-router-dom";
+
 function Footer() {
+
+    const handler = (() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+   })
 return (
 <footer className="bg-[#020b1b] text-white py-10 px-6 mt-20 border-t border-gray-800">
 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 {/* Brand */}
 <div>
-<img src={logo} alt="N Examind Logo" className="h-12 w-auto object-contain" />
+<Logo />
 <p className="text-gray-400 text-sm leading-6">
 Empowering next‑gen AI solutions with precision, trust, and innovation.
 </p>
@@ -17,10 +23,18 @@ Empowering next‑gen AI solutions with precision, trust, and innovation.
 <div>
 <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
 <ul className="space-y-2 text-gray-300 text-sm">
-<li className="hover:text-blue-400 cursor-pointer">Home</li>
-<li className="hover:text-blue-400 cursor-pointer">Services</li>
-<li className="hover:text-blue-400 cursor-pointer">About Us</li>
-<li className="hover:text-blue-400 cursor-pointer">Contact</li>
+<li className="hover:text-blue-400 cursor-pointer">
+    <Link to="/aboutus" onClick={handler}className="hover:text-[#b6fefe] transition">About us</Link>
+</li>
+<li className="hover:text-blue-400 cursor-pointer">
+          <Link to="/services" onClick={handler} className="hover:text-[#b6fefe] transition">Services</Link>
+</li>
+<li className="hover:text-blue-400 cursor-pointer">
+          <Link to="/technologies" onClick={handler} className="hover:text-[#b6fefe] transition">Technologies</Link>
+</li>
+<li className="hover:text-blue-400 cursor-pointer">
+    <Link to="/contact-us" onClick={handler} className="hover:text-[#b6fefe] transition">Contact Us</Link>
+</li>
 </ul>
 
 </div>
@@ -58,7 +72,7 @@ Empowering next‑gen AI solutions with precision, trust, and innovation.
 
 {/* Bottom */}
 <div className="text-center text-gray-500 text-sm mt-10 border-t border-gray-800 pt-5">
-© {new Date().getFullYear()} NExamind. All rights reserved.
+© {new Date().getFullYear()} neXamind. All rights reserved.
 </div>
 </footer>
 );

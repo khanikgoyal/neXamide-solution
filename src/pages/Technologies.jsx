@@ -42,10 +42,13 @@ const techData = [
 
 export default function Technologies() {
   return (
-    <section id="technologies" className="py-20 bg-[#f8fbff] text-black">
+    <section id="technologies" className="py-26 bg-[#f8fbff] text-black">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12  from-blue-400">
-          Technologies We Work With
+          Technologies 
+          <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+              {" "}We Work With
+            </span>
         </h2>
 
         {techData.map((category, index) => (
