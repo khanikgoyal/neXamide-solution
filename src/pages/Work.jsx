@@ -2,25 +2,25 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "AI Resume Analyzer",
+    title: "DocBot",
     description:
-      "An AI-powered tool that analyzes resumes and provides smart insights using NLP.",
-    tech: ["React", "Node.js", "AI", "Tailwind"],
-    link: "#",
+      "An AI-powered document assistant that allows users to chat with documents and extract insights using natural language.",
+    tech: ["React", "AI", "NLP", "Tailwind"],
+    link: "https://www.docbot.one/",
   },
   {
-    title: "Business Website",
+    title: "AcceptMyPrice",
     description:
-      "A modern, responsive business website with clean UI and fast performance.",
-    tech: ["React", "Tailwind", "SEO"],
-    link: "#",
+      "A service marketplace where clients post jobs with their budget and vendors choose to accept or apply, flipping the traditional bidding model.",
+    tech: ["React", "Marketplace", "UI/UX"],
+    link: "https://acceptmyprice.com/",
   },
   {
-    title: "E-commerce Platform",
+    title: "neXamind Solutions",
     description:
-      "Full-featured e-commerce platform with secure payments and admin dashboard.",
-    tech: ["React", "Node.js", "MongoDB"],
-    link: "#",
+      "A modern digital solutions website showcasing web development, AI tools, and professional services.",
+    tech: ["React", "Tailwind", "Framer Motion"],
+    link: "https://nexamindsolution.in/",
   },
 ];
 

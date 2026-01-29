@@ -13,9 +13,9 @@ export default function HomePage() {
        <HeroSection />
        <ServicesSection/> 
        <Technologies/>
+       <Work/>
        <AboutUs/>
        <ContactUS/>
-       <Work/>
     </main>
  
  </>
