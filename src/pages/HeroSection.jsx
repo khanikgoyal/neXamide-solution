@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -43,7 +44,9 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 rounded-full border border-gray-400 text-base sm:text-lg cursor-pointer"
           >
+            <Link to="/contact-us">
             Contact Me
+            </Link>
           </motion.a>
         </div>
       </motion.div>
