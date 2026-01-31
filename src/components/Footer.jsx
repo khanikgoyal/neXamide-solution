@@ -72,7 +72,7 @@ Empowering next‑gen AI solutions with precision, trust, and innovation.
 
 {/* Bottom */}
 <div className="text-center text-gray-500 text-sm mt-10 border-t border-gray-800 pt-5">
-© {new Date().getFullYear()} neXamind. All rights reserved.
+© 2025 neXamind. All rights reserved.
 </div>
 </footer>
 );
