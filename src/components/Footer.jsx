@@ -56,10 +56,10 @@ Empowering next‑gen AI solutions with precision, trust, and innovation.
 <div>
 <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
 <div className="flex items-center space-x-4 mt-2">
-<a className="p-2 bg-gray-800 rounded-full hover:bg-blue-500 transition cursor-pointer">
+<a href="https://www.facebook.com/people/Nexamind-soultion/61587297927673/" className="p-2 bg-gray-800 rounded-full hover:bg-blue-500 transition cursor-pointer">
 <FaFacebookF size={16} />
 </a>
-<a className="p-2 bg-gray-800 rounded-full hover:bg-blue-500 transition cursor-pointer">
+<a href="https://www.instagram.com/nexamindsolution/" className="p-2 bg-gray-800 rounded-full hover:bg-blue-500 transition cursor-pointer">
 <FaInstagram size={16} />
 </a>
 <a className="p-2 bg-gray-800 rounded-full hover:bg-blue-500 transition cursor-pointer">
