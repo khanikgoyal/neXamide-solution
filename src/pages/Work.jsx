@@ -5,22 +5,22 @@ const projects = [
     title: "DocBot",
     description:
       "An AI-powered document assistant that allows users to chat with documents and extract insights using natural language.",
-    tech: ["React", "AI", "NLP", "Tailwind"],
+    tech: ["React", "AI", "NLP", "Tailwind", "Node.js"],
     link: "https://www.docbot.one/",
   },
   {
     title: "AcceptMyPrice",
     description:
       "A service marketplace where clients post jobs with their budget and vendors choose to accept or apply, flipping the traditional bidding model.",
-    tech: ["React", "Marketplace", "UI/UX"],
+    tech: ["React", "Marketplace","Node.js", "UI/UX"],
     link: "https://acceptmyprice.com/",
   },
   {
-    title: "neXamind Solutions",
+    title: "Shiv Stitching House",
     description:
-      "A modern digital solutions website showcasing web development, AI tools, and professional services.",
+      "A handcrafted bags brand showcasing homemade, custom-stitched products. Customers can explore designs and easily place orders via WhatsApp.",
     tech: ["React", "Tailwind", "Framer Motion"],
-    link: "https://nexamindsolution.in/",
+    link: "https://shivstitchinghouse.in/",
   },
 ];
 

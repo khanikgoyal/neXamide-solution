@@ -36,7 +36,9 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-base sm:text-lg shadow-lg cursor-pointer"
           >
+             <Link to="/works">
             View My Work
+            </Link>
           </motion.a>
 
           <motion.a
