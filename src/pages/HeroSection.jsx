@@ -1,10 +1,114 @@
+
+// import { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+
+// export default function HeroSection() {
+//   const [showSpan, setShowSpan] = useState(false);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setShowSpan(true), 2000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   return (
+//     <section className="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 overflow-hidden pt-24 md:pt-0">
+
+//       {/* BACKGROUND GRADIENT BLOBS */}
+//       <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] bg-purple-300 rounded-full blur-[120px] opacity-40"></div>
+//       <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] bg-blue-300 rounded-full blur-[120px] opacity-40"></div>
+
+//       <motion.div
+//         initial={{ opacity: 0, y: 40 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8 }}
+//         className="max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto"
+//       >
+//         {/* HEADLINE */}
+
+//         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-snug md:leading-tight">
+//           Transforming Ideas Into
+//           {showSpan && (
+//             <span className="block mt-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+//               Intelligent Digital Solutions
+//             </span>
+//           )}
+//         </h1>
+
+//         {/* SUBTEXT */}
+//         <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-5 px-2 sm:px-0">
+//           We create smart digital systems that get you customers, save time, and grow your business.
+//         </p>
+
+//         {/* CTA BUTTONS */}
+//         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-base sm:text-lg shadow-lg cursor-pointer"
+//           >
+//              <Link to="/works">
+//             See Real Business Results
+//             </Link>
+//           </motion.a>
+
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             className="px-6 py-3 rounded-full border border-gray-400 text-base sm:text-lg cursor-pointer"
+//           >
+//             <Link to="/contact-us">
+//             Contact Me
+//             </Link>
+//           </motion.a>
+//         </div>
+//       </motion.div>
+//     </section>
+//   );
+// }
+
+
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
+  const phrases = [
+    "Intelligent Digital Solutions",
+    "Income-Generating Digital Businesses",
+  ];
+
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let typingTimer;
+
+    const type = () => {
+      const fullText = phrases[currentPhrase];
+
+      if (currentIndex <= fullText.length - 1) {
+        // Add letter by letter
+        setDisplayedText(fullText.slice(0, currentIndex + 1));
+        currentIndex++;
+        typingTimer = setTimeout(type, 100); // typing speed
+      } else {
+        // Pause before next phrase
+        setTimeout(() => {
+          setDisplayedText("");
+          setCurrentPhrase((prev) => (prev + 1) % phrases.length);
+        }, 1500);
+      }
+    };
+
+    type();
+
+    return () => clearTimeout(typingTimer);
+  }, [currentPhrase]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 overflow-hidden pt-24 md:pt-0">
-
       {/* BACKGROUND GRADIENT BLOBS */}
       <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] bg-purple-300 rounded-full blur-[120px] opacity-40"></div>
       <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] bg-blue-300 rounded-full blur-[120px] opacity-40"></div>
@@ -19,14 +123,14 @@ export default function HeroSection() {
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-snug md:leading-tight">
           Transforming Ideas Into
           <span className="block mt-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Intelligent Digital Solutions
+            {displayedText}
+            <span className="inline-block animate-blink">|</span>
           </span>
         </h1>
 
         {/* SUBTEXT */}
         <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-5 px-2 sm:px-0">
-          I craft modern websites, AI-powered tools, and seamless digital
-          experiences that help businesses grow and stand out.
+          We create smart digital systems that get you customers, save time, and grow your business.
         </p>
 
         {/* CTA BUTTONS */}
@@ -36,9 +140,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-base sm:text-lg shadow-lg cursor-pointer"
           >
-             <Link to="/works">
-            View My Work
-            </Link>
+            <Link to="/works">See Real Business Results</Link>
           </motion.a>
 
           <motion.a
@@ -46,9 +148,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 rounded-full border border-gray-400 text-base sm:text-lg cursor-pointer"
           >
-            <Link to="/contact-us">
-            Contact Me
-            </Link>
+            <Link to="/contact-us">Contact Me</Link>
           </motion.a>
         </div>
       </motion.div>

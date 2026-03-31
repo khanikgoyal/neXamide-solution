@@ -14,7 +14,7 @@ const services = [
   },
   {
     icon: <FiGlobe size={40} />,
-    title: "Custom Web Development",
+    title: "E-commerce Automation Setup",
     desc: "From business websites to complex dashboards, we build modern responsive web applications tailored to your needs.",
   },
   {

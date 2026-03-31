@@ -41,10 +41,9 @@ export default function ContactUS() {
             </p>
 
             <div className="space-y-4 text-gray-700">
-              <p>📧 <span className="font-medium">nexamindsolution@gmail.com</span></p>
-              <p>📞 <span className="font-medium">+91 8708161165</span></p>
-              <p>📞 <span className="font-medium">+91 9023046719</span></p>
-              <p>📍 <span className="font-medium">India</span></p>
+              <p>📧 <span className="font-medium">contact@nexamindsolution.com</span></p>
+              <p>📞 <span className="font-medium">+1800-903-5513</span></p>
+              <p>📍 <span className="font-medium">USA</span></p>
             </div>
           </div>
 

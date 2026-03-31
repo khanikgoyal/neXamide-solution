@@ -42,7 +42,7 @@ Empowering next‑gen AI solutions with precision, trust, and innovation.
 
 {/* Services */}
 <div>
-<h3 className="text-lg font-semibold mb-3">Our Services</h3>
+<h3 className="text-lg font-semibold mb-3">Business Systems We Build For You</h3>
 <ul className="space-y-2 text-gray-300 text-sm">
 <li className="hover:text-blue-400 cursor-pointer">AI Automation</li>
 <li className="hover:text-blue-400 cursor-pointer">Web Development</li>

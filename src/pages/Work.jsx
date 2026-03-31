@@ -38,13 +38,13 @@ export default function Work() {
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-extrabold">
-            My
+            Live Business 
             <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              {" "}Works
+              {" "}Projects
             </span>
           </h2>
           <p className="mt-4 text-gray-600 text-base sm:text-lg">
-            A selection of projects showcasing my skills and experience.
+            Real projects that deliver leads, growth, and revenue.
           </p>
         </div>
 
