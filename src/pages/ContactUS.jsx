@@ -1,6 +1,63 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ContactUS() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      address: formData.get("address"),
+      message: formData.get("message"),
+      _subject: "New Contact Form Submission",
+      _captcha: "false",
+      _template: "table",
+    };
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/contact@nexamindsolution.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.ok) {
+        form.reset();
+        setStatus({
+          type: "success",
+          message: "Message sent successfully.",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: "Failed to send message. Please try again.",
+        });
+      }
+    } catch {
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -48,9 +105,10 @@ export default function ContactUS() {
           </div>
 
           {/* Right Form */}
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               required
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -58,13 +116,23 @@ export default function ContactUS() {
 
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              required
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+
+            <input
+              type="text"
+              name="address"
+              placeholder="Your Address"
               required
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
 
             <textarea
               rows="5"
+              name="message"
               placeholder="Your Message"
               required
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -74,10 +142,21 @@ export default function ContactUS() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-lg font-medium shadow-lg"
+              disabled={isSubmitting}
+              className="w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-lg font-medium shadow-lg disabled:opacity-70"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
+
+            {status.message && (
+              <p
+                className={`text-sm text-center ${
+                  status.type === "success" ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {status.message}
+              </p>
+            )}
           </form>
         </div>
       </motion.div>
