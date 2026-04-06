@@ -21,7 +21,7 @@ function Header() {
         <nav className="hidden md:flex gap-8 text-lg">
           <Link to="/aboutus" className="hover:text-[#b6fefe] transition">About us</Link>
           <Link to="/services" className="hover:text-[#b6fefe] transition">Services</Link>
-          <Link to="/technologies" className="hover:text-[#b6fefe] transition">Technologies</Link>
+          {/* <Link to="/technologies" className="hover:text-[#b6fefe] transition">Technologies</Link> */}
           <Link to="/works" className="hover:text-[#b6fefe] transition">Works</Link>
           <Link to="/contact-us" className="hover:text-[#b6fefe] transition">Contact Us</Link>
         </nav>
